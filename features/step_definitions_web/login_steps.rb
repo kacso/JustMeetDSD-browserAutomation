@@ -25,3 +25,7 @@ Given /^I sign in$/ do
 	And I click on login
   }
 end
+
+Then /^error message is present$/ do
+expect(on(LoginPage).errorMessagePresent).to eq true
+end

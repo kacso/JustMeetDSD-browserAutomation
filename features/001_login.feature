@@ -16,3 +16,15 @@ Feature: manage login
     Given I sign in
     When I log out
     Then Login page has expected title     
+	
+  Scenario: Unseccesful login
+	When I enter d@e.g username
+	And I enter aaa password
+	And I click on login
+	Then Login page has expected title
+	
+	Then error message is present
+	
+  
+	
+  

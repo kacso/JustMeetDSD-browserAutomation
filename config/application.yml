@@ -1,4 +1,4 @@
 SITE: http://justmeetdsd.herokuapp.com
-BROWSER_LABEL: firefox
+BROWSER_LABEL: chrome
 PAGE_TIMEOUT: 30
 TEST_FILE: ..\..\..\files\test_file.txt

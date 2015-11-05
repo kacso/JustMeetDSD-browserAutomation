@@ -6,7 +6,9 @@ class LoginPage
 
   text_field(:username, :xpath => '//*[@id="login-page"]/div/div/form/input[1]')
   text_field(:password, :xpath => '//*[@id="login-page"]/div/div/form/input[2]')
+  div(:error, :xpath => '/html/body/div[2]')
   button(:login, :type => 'submit')
+   link(:create_account, :text => 'Create an account')
 
   def has_expected_title
 	username_element.when_visible(timeout = @@load_timeout)
@@ -31,4 +33,14 @@ class LoginPage
     login_element.when_visible(timeout = @@load_timeout)
     login
   end
+  
+  def errorMessagePresent
+	error?
+  end
+  
+  def click_create_account
+	create_account_element.when_visible(timeout = @@load_timeout)
+	create_account #metti solo il nome di quello che vuoi attivare
+  end
+  
 end
