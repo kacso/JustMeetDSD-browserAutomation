@@ -13,7 +13,7 @@ class LoginPage
   def has_expected_title
 	username_element.when_visible(timeout = @@load_timeout)
 	has_expected_title?
-  end
+  end 
   
   def set_load_timeout(value)
     @@load_timeout = value

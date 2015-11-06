@@ -21,15 +21,32 @@ And I fill name with Test2
 And I fill surname with test1
 And I fill password with 123
 And I click signup
-Then error is displayed
+Then Error is displayed
 
-Scenario: Registration name missing
+Scenario: Registration password missing
 When I click create account
 And I fill name with Test2
 And I fill surname with test1
-And I fill password with 123
+And I fill email with v@v.v
 And I click signup
-Then error is displayed
+Then Error is displayed
+
+Scenario: Registration name missing
+When I click create account
+And I fill surname with test1
+And I fill password with 123
+And I fill email with v@v.v
+And I click signup
+Then Error is displayed
+
+Scenario: Registration surname missing
+When I click create account
+And I fill name with test1
+And I fill password with 123
+And I fill email with v@v.v
+And I click signup
+Then Error is displayed
+
 
 
 

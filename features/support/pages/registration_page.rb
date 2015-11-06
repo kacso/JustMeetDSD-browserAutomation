@@ -10,6 +10,7 @@ class RegistrationPage
    text_field(:password, :xpath => '/html/body/div[3]/div/div/div/div[2]/form/div[4]/div/input')
    button(:signup, :xpath => '/html/body/div[3]/div/div/div/div[3]/button[1]')
    div(:registration, :text  => 'Member registered')   
+   div(:error, :xpath => '/html/body/div[3]/div/div/div/div[2]/ng-include/div/div/div/span')
    
   def has_expected_title
     name_element.when_visible(timeout = @@load_timeout) # ho messo name ma potevo mettere anche surname o gli altri
@@ -21,32 +22,36 @@ class RegistrationPage
   end
 
 	def fill_name(value)
-	name_element.when_visible(timeout = @@load_timeout)
-	self.name = value
+		name_element.when_visible(timeout = @@load_timeout)
+		self.name = value
 	end
 	
 	def fill_surname(value)
-	surname_element.when_visible(timeout = @@load_timeout)
-    self.surname = value
+		surname_element.when_visible(timeout = @@load_timeout)
+		self.surname = value
 	end
 	
 	def fill_email(value)
-	email_element.when_visible(timeout = @@load_timeout)
-    self.email = value
+		email_element.when_visible(timeout = @@load_timeout)
+		self.email = value
 	end
 	
 	def fill_password(value)
-	password_element.when_visible(timeout = @@load_timeout)
-    self.password = value
+		password_element.when_visible(timeout = @@load_timeout)
+		self.password = value
 	end
 	
 	def click_signup
-	signup_element.when_visible(timeout = @@load_timeout)
-	signup
+		signup_element.when_visible(timeout = @@load_timeout)
+		signup
 	end
 	
 	def registrationsuccesfull
-	registration?
+		registration?
+	end
+	
+	def ErrorMessage
+		error?
 	end
   
   
