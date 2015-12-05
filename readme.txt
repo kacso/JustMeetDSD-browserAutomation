@@ -50,8 +50,9 @@ ie settings
 Enable Protected Mode must be set to the same value (enabled or disabled) for all zones.
 
 RUN TEST:
-start test: u shell-u -> cucumber.bat .\features\featureName.feature -f html -o reports\reportName.html
+start test: u shell-u -> cucumber.bat .\features\{featureName}.feature{:scenario_starting_line} -f html -o reports\{reportName}.html
 
+:scenario_starting_line is optional paramater, use this if you want to run only one scenario.
 For running ALL tests run runAll.bat
 
 
@@ -66,6 +67,8 @@ GIT - eForge Process: Application environment variables.
 
       USERNAME: justmeet_username
       PASSWORD: justmeet_password
+      
+      In root folder create "reports" folder
       
       Commands: git status -> za vidjeti status fajlova
                 git config --global user.name "Your Name"   -> u Your name upiši npr.eberbun
