@@ -3,31 +3,26 @@ Install Ruby from http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.0
 In installer leave all default except for check boxes. Check second and third.
 
 Install ruby gem certificate:
-Download https://raw.githubusercontent.com/rubygems/rubygems/master/lib/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem
->gem which rubygems
-Copy .pem file to folder rubygems/ssl_certs
+Download (right click -> Save As -> save as .pem) https://raw.githubusercontent.com/rubygems/rubygems/master/lib/rubygems/ssl_certs/AddTrustExternalCARoot-2048.pem
+
+In console navigate to ruby installation folder and run:
+	gem which rubygems
+Copy .pem file to folder {ruby installation path}\lib\ruby\2.0.0\rubygems\ssl_certs
 
 Install Ruby dev kit for building native libraries.
 http://cdn.rubyinstaller.org/archives/devkits/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe
 Extract it to some folder.
-cd to that folder.
+cd (in console) to that folder.
 ruby dk.rb init
 ruby dk.rb install
 To test the dev lit installation:
 gem install json --platform=ruby
 should successfully finish.
 
-Install Github for windows.
-https://windows.github.com/
-Git shell part gives bash and git command line out of the box.
-
-
-cd srs-browser-automation
+cd to JustMeetDSD-browserAutomation
 gem install bundle
 bundle install
 
-phantomjs, webdriver for chrome, ie
-http://www.rubydoc.info/github/cheezy/page-object/PageObject/Accessors
 
 gherkin error:
 C:\Ruby200-x64\lib\ruby\gems\2.0.0\gems\gherkin-2.12.2\lib\gherkin\c_lexer.rb
@@ -79,6 +74,11 @@ GIT - eForge Process: Application environment variables.
                 git commit -m "first commit"  -> first commit je komentar što dodaješ na eforge
                 git push origin master -> naredba za dodavanje u eforge
                 git pull -> naredba za skidanje sa eforge sebi lokalno
+
+
+Documentation
+http://www.rubydoc.info/github/cheezy/page-object/PageObject/Accessors
+
 
 DRIVER/BROWSER UPDATE:				
 Update web driver:
