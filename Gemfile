@@ -1,0 +1,17 @@
+source 'https://rubygems.org'
+
+gem 'chunky_png'
+gem 'cucumber'
+gem 'net-http-persistent'
+gem 'page-object'
+gem 'parallel_tests'
+gem 'rake'
+gem 'rspec'
+gem 'syntax'
+gem 'headless'
+gem 'mail'
+gem 'httpclient'
+gem 'json_spec'
+gem "json"
+gem 'test_runner', '>= 0.9.37'
+gem 'debugger2'
