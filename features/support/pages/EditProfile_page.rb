@@ -1,11 +1,14 @@
-class EditProfile
+class MainPage
   include PageObject
-  page_url '<%=params[:base_url]%>' 
+  page_url '<%=params[:base_url]%>/#/userProfile' 
   expected_title "JustMeet - Project for SCORE"
   @@load_timeout
   
-   text_field(:AboutMe, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[1]/p[4]/input') 
-  
+   text_field(:aboutme, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[1]/p[4]/input') 
+   text_field(:oldpassword, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[1]/p[6]/input') 
+   text_field(:newpassword, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[1]/p[8]/input') 
+   button(:signup, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[3]/button[1]')
+   div(:change, :xpath  => '')   
   
   def has_expected_title
     logout_element.when_visible(timeout = @@load_timeout)
@@ -16,9 +19,29 @@ class EditProfile
     @@load_timeout = value
   end
 
-  def fill_AboutMe(value)
-	AboutMe_element.when_visible(timeout = @@load_timeout)
-	self.AboutMe = value
+  def fill_aboutme(value)
+	aboutme_element.when_visible(timeout = @@load_timeout)
+	self.aboutme = value
   end
+  
+   def fill_oldpassword(value)
+	oldpassword_element.when_visible(timeout = @@load_timeout)
+	self.oldpassword = value
+  end
+  
+  def fill_newpassword(value)
+	newpassword_element.when_visible(timeout = @@load_timeout)
+	self.newpassword = value
+  end
+  
+  def click_save
+		save_element.when_visible(timeout = @@load_timeout)
+		save
+  end
+  
+  def changesaved
+		changesaved?
+  end
+  
   
  end
