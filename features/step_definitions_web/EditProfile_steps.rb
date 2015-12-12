@@ -1,3 +1,17 @@
+When /^I enter (.+) username$/ do |username|
+  username = username == 'valid' ? @client['USERNAME'] : username
+  on(LoginPage).set_username username
+end
+
+When /^I enter (.+) password$/ do |password|
+  password = password == 'valid' ? @client['PASSWORD'] : password
+  on(LoginPage).set_password password
+ end
+ 
+  When /^I click on login$/ do
+  on(LoginPage).click_login
+end
+
 When /^I click account$/ do
   on(MainPage).click_account
 end
