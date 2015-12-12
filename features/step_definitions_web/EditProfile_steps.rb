@@ -1,3 +1,8 @@
+Given /^I am on Main page$/ do
+  base_url = @app['SITE']  
+  visit(MainPage, using_params: {base_url: base_url})
+end
+
 When /^I enter (.+) username$/ do |username|
   username = username == 'valid' ? @client['USERNAME'] : username
   on(LoginPage).set_username username
@@ -16,12 +21,12 @@ When /^I click account$/ do
   on(MainPage).click_account
 end
 
-When /^I click personal info$/ do
+When /^I click personalinfo$/ do
   on(MainPage).click_personal_info
 end
 
-When /^I click option$/ do
-  on(MainPage).click_option
+When /^I click options$/ do
+  on(MainPage).click_options
 end
 
 When /^I fill aboutme with (.+)$/ do |aboutme|
