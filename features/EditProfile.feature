@@ -3,16 +3,13 @@
 
   Background:
 	Given I setup timeout for pages
-	And I am on Main page
+    And I sign in
+	And I click account
+	And I click personalinfo
 	And Main page has expected title
 
 Scenario: Edit Profile
-When I enter valid username
-    And I enter valid password
-    And I click on login
-	And I click account
-	And I click personalinfo
-	And I click options
+	When I click options
 	And I fill aboutme with I_like_this_app
 	And I fill oldpassword with 123
 	And I fill newpassword with 321
