@@ -10,11 +10,11 @@ class MainPage
    text_field(:aboutme, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[1]/p[4]/input')   
    text_field(:oldpassword, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[1]/p[6]/input') 
    text_field(:newpassword, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[1]/p[8]/input') 
-   button(:signup, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[3]/button[1]')
-   div(:change, text:  => 'The new settings were updated')   
+   button(:save, :xpath => '//*[@id="main-content"]/section/div/div/div/div[2]/div/form/div/div[3]/button[1]')
+   div(:change, :text  => 'The new settings were updated')   
+   link(:profile, :id => 'profileImage')
   
   def has_expected_title
-    logout_element.when_visible(timeout = @@load_timeout)
     has_expected_title?
   end
 
@@ -22,19 +22,19 @@ class MainPage
     @@load_timeout = value
   end
   
-   def click_account
-		account_element.when_visible(timeout = @@load_timeout)
-		account
+  def click_account
+	account_element.when_visible(timeout = @@load_timeout)
+	account
   end
   
-   def click_personalinfo
-		personalinfo_element.when_visible(timeout = @@load_timeout)
-		personalinfo
+  def click_personalinfo
+	personalinfo_element.when_visible(timeout = @@load_timeout)
+	personalinfo
   end
   
-   def click_options
-		options_element.when_visible(timeout = @@load_timeout)
-		options
+  def click_options
+	options_element.when_visible(timeout = @@load_timeout)
+	options
   end
 
   def fill_aboutme(value)
@@ -42,7 +42,7 @@ class MainPage
 	self.aboutme = value
   end
   
-   def fill_oldpassword(value)
+  def fill_oldpassword(value)
 	oldpassword_element.when_visible(timeout = @@load_timeout)
 	self.oldpassword = value
   end
@@ -53,13 +53,18 @@ class MainPage
   end
   
   def click_save
-		save_element.when_visible(timeout = @@load_timeout)
-		save
+	save_element.when_visible(timeout = @@load_timeout)
+	save
   end
   
   def changesaved
-		changesaved?
+	sleep(1)
+	change?
   end
   
+  def click_profile
+	profile_element.when_visible(timeout = @@load_timeout)
+	profile
+  end
   
  end

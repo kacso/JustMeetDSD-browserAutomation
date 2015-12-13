@@ -20,6 +20,9 @@ end
 
 Given /^I sign in$/ do
   steps %Q{
+    Given I setup timeout for pages
+	And I am on Login page
+	And Login page has expected title
 	When I enter valid username
 	And I enter valid password
 	And I click on login

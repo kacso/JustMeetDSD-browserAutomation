@@ -34,3 +34,7 @@ end
 Then /^changes are saved$/ do 
   expect(on(MainPage).changesaved).to eq true
 end
+
+And /^I open profile$/ do
+  on(MainPage).click_profile
+end
