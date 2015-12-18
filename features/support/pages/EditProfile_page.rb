@@ -67,4 +67,8 @@ class MainPage
 	profile
   end
   
+  def ErrorMessage
+		error?
+	end
+  
  end

@@ -19,14 +19,6 @@ When /^I fill aboutme with (.+)$/ do |aboutme|
   on(MainPage).fill_aboutme aboutme
 end
 
-When /^I fill oldpassword with (.+)$/ do |oldpassword|
-  on(MainPage).fill_oldpassword oldpassword
-end
-
-When /^I fill newpassword with (.+)$/ do |newpassword|
-  on(MainPage).fill_newpassword newpassword
-end
-
 When /^I click save$/ do 
   on(MainPage).click_save
 end
@@ -37,4 +29,16 @@ end
 
 And /^I open profile$/ do
   on(MainPage).click_profile
+end
+
+When /^I fill oldpassword with (.+)$/ do |oldpassword|
+  on(MainPage).fill_oldpassword oldpassword
+end
+
+When /^I fill newpassword with (.+)$/ do |newpassword|
+  on(MainPage).fill_newpassword newpassword
+end
+
+Then /^Error is showed$/ do
+  expect(on(MainPage).ErrorMessage).to eq true
 end
