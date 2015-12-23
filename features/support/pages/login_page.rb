@@ -8,8 +8,10 @@ class LoginPage
   text_field(:password, :xpath => '//*[@id="login-page"]/div/div/form/input[2]')
   div(:error, :xpath => '/html/body/div[2]')
   button(:login, :type => 'submit')
-   link(:create_account, :text => 'Create an account')
-
+  link(:create_account, :text => 'Create an account')
+  button(:recoverpassword, :xpath => '<a data-toggle="modal" ng-click="show=true"> Forgot Password?</a>')
+  link(:forgot_password, :text => 'Forgot Password?')
+  
   def has_expected_title
 	username_element.when_visible(timeout = @@load_timeout)
 	has_expected_title?
@@ -42,5 +44,12 @@ class LoginPage
 	create_account_element.when_visible(timeout = @@load_timeout)
 	create_account #metti solo il nome di quello che vuoi attivare
   end
+  
+   def click_recover_password
+    recover_password_element.when_visible(timeout = @@load_timeout)
+    recover_password
+  end
+  
+  
   
 end

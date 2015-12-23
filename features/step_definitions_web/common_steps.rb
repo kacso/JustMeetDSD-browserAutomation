@@ -19,4 +19,5 @@ When /^I setup timeout for pages$/ do
 	on(HomePage).set_load_timeout @app['PAGE_TIMEOUT'].to_i
 	on(RegistrationPage).set_load_timeout @app['PAGE_TIMEOUT'].to_i
 	on(MainPage).set_load_timeout @app['PAGE_TIMEOUT'].to_i
-end
+	
+	end
