@@ -6,7 +6,7 @@ class RecoverPasswordPage
   
   text_field(:email, :xpath => '//*[@id="login-page"]/div/div/form[2]/input')
   button(:recoverpassword, :type => 'submit')
-  div(:newpassword, :text  => '//*[@id="login-page"]')
+  div(:newpassword, :xpath  => 'Email sent successfully')
 
 def enter_email(email)
 		email_element.when_visible(timeout = @@load_timeout)

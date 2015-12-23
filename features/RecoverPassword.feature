@@ -7,7 +7,7 @@ Feature: manage RecoverPassword
 	  And Login page has expected title
 
  Scenario: Recover Password
-    When I click forgot password
+    When I click recover password
 	And I enter email
 	And I click sendemail
       Then mail with new password is sent
