@@ -10,7 +10,7 @@ class LoginPage
   button(:login, :type => 'submit')
   link(:create_account, :text => 'Create an account')
   button(:recoverpassword, :xpath => '<a data-toggle="modal" ng-click="show=true"> Forgot Password?</a>')
-  link(:forgot_password, :text => 'Forgot Password?')
+  link(:recover_password, :text => 'Forgot Password?')
   
   def has_expected_title
 	username_element.when_visible(timeout = @@load_timeout)

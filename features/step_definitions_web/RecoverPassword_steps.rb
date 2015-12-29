@@ -2,7 +2,7 @@
   on(LoginPage).click_recover_password
   end
   
- When /^I enter valid (.+) email$/ do |email|
+ When /^I enter (.+) email$/ do |email|
   email = email == 'valid' ? @client['EMAIL'] : email
   on(RecoverPasswordPage).set_email email
 end

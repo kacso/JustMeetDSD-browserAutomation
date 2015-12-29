@@ -5,22 +5,32 @@ class RecoverPasswordPage
   @@load_timeout
   
   text_field(:email, :xpath => '//*[@id="login-page"]/div/div/form[2]/input')
-  button(:recoverpassword, :type => 'submit')
-  div(:newpassword, :xpath  => 'Email sent successfully')
+  button(:sendemail, :xpath => '//*[@id="login-page"]/div/div/form[2]/button')
+  div(:success_message, :text  => 'Email sent successfully')
 
-def enter_email(email)
-		email_element.when_visible(timeout = @@load_timeout)
-		self.email = email
-	end  
+  def has_expected_title
+	email_element.when_visible(timeout = @@load_timeout)
+	has_expected_title?
+  end 
+  
+  def set_load_timeout(value)
+    @@load_timeout = value
+  end    
+  
+  def set_email(email)
+	email_element.when_visible(timeout = @@load_timeout)
+	self.email = email
+  end  
 	
-def click_sendemail
-		sendemail_element.when_visible(timeout = @@load_timeout)
-		sendemail
-	end
+  def click_sendemail
+	sendemail_element.when_visible(timeout = @@load_timeout)
+	sendemail
+  end
 	
 
-def newpasswordsuccesfull
-		newpassword?
-	end
+  def newpasswordsuccesfull
+	sleep(2)
+	success_message?
+  end
 	
 end
