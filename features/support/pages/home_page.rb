@@ -54,4 +54,9 @@ class HomePage
 		error?
 	end
   
+   def click_
+    invite_friends_element.when_visible(timeout = @@load_timeout)
+    invite_friends
+  end
+  
 end

@@ -8,6 +8,6 @@ Feature: manage RecoverPassword
 
  Scenario: Recover Password
     When I click recover password
-	And I enter email
+	And I enter y@y.y email
 	And I click sendemail
       Then mail with new password is sent
