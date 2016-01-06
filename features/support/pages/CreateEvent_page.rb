@@ -17,7 +17,7 @@ class CreateEventPage
    button(:mandatory, :xpath => '//*[@id="main-content"]/section/div/form/div[7]/div/div/div/div[2]/label/input')
    text_field(:tags, :xpath => '//*[@id="main-content"]/section/div/form/div[8]/div/input')
    button(:createevent, :xpath => '//*[@id="main-content"]/section/div/form/div[9]/input')
-   div(:createvent, :text  => '')
+   div(:createvent, :text  => 'Event created')
 
    
  def has_expected_title
