@@ -4,17 +4,19 @@ Feature: Invite friend
   Background:
 	Given I setup timeout for pages
     And I sign in
-	And I open profile
-	And Home page has expected title
+	When I click invite friends
 	
 Scenario: send an email
-	When I click invite friends
 	And I fill friend email with co@co.co
-	And I click blue button
+	And I click invite
 	Then email is sent
 
-Scenario: email already entered
-	When I click invite friends
-	And I fill friend email already entered with x@x.x
-	And I click blue button
-	Then Error appears 
+Scenario: inviting existing user
+	And I fill friend email with x@x.x
+	And I click invite
+	Then email is not sent
+	
+Scenario: wrong format email
+	And I fill friend email with x
+	And I click invite
+	Then email is not sent

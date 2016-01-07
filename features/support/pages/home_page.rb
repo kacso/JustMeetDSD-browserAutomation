@@ -6,10 +6,10 @@ class HomePage
 
   link(:logout, :text => "Logout")
   link(:userProfile, :href => "#/userProfile")
-  button(:invite_friends, :xpath => '//*[@id="inviteFriends"]/a/span[1]')
-  text_field(:friend_email, :xpath => '//*[@id="inviteFriends"]/ul/form/div/input') 
-  button(:blue_button, :xpath => '//*[@id="inviteFriends"]/ul/form/div/span/button/i')
-  div(:emailsent, :text => 'Friend invited')
+  link(:invite_friends, :xpath => '//*[@id="inviteFriends"]/a')
+  text_field(:friend_email, :xpath => '/html/body/div[7]/div/div/div/form/div[1]/input') 
+  button(:invite, :xpath => '//*[@id="invite"]')
+  div(:friend_invited, :text => 'Friend invited')
   link(:create_event, :xpath => '//*[@id="newEvent"]')
   
   def has_expected_title
@@ -31,29 +31,25 @@ class HomePage
     invite_friends
   end
   
-  def fill_Femail(value)
-	Femail_element.when_visible(timeout = @@load_timeout)
-	self.Femail = value
+  def fill_friend_email(value)
+	friend_email_element.when_visible(timeout = @@load_timeout)
+	self.friend_email = value
   end
   
-  def click_blue_button
-    blue_button_element.when_visible(timeout = @@load_timeout)
-    blue_button
+  def click_invite
+    invite_element.when_visible(timeout = @@load_timeout)
+    invite
   end
   
   def emailsent
 	sleep(1)
-	email
+	friend_invited?
 	end
 	
   def fill_emailentered(value)
 	emailentered_element.when_visible(timeout = @@load_timeout)
 	self.emailentered = value
   end
-   
- def Error
-		error?
-	end
   
   def click_new_event
 	create_event_element.when_visible(timeout = @@load_timeout)

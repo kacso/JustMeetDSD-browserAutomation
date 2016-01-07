@@ -8,21 +8,17 @@ When /^I click invite friends$/ do
 end
 
 When /^I fill friend email with (.+)$/ do |email|
-  on(HomePage).fill_Femail Femail
+  on(HomePage).fill_friend_email email
 end
 
-When /^I click blue button$/ do 
-  on(HomePage).click_blue_button
+When /^I click invite$/ do 
+  on(HomePage).click_invite
 end
 
 Then /^email is sent$/ do 
   expect(on(HomePage).emailsent).to eq true
 end
 
-When /^I fill friend email already entered with (.+)$/ do |emailentered|
-  on(HomePage).fill_emailentered emailentered
-end
-
-Then /^Error appears$/ do
-  expect(on(HomePage).Error).to eq true
+Then /^email is not sent$/ do
+  expect(on(HomePage).emailsent).to eq false
 end
