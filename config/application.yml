@@ -3,3 +3,6 @@ SITE: http://localhost:3000
 BROWSER_LABEL: firefox
 PAGE_TIMEOUT: 30
 TEST_FILE: ..\..\..\files\test_file.txt
+URL_CAL_NAME: AUTO_URL
+IMPORT_CAL_NAME: AUTO_URL
+CAL_URL: https://www.fer.unizg.hr/_download/calevent/mycal.ics?user=ds46423&auth=8cc9909f50eb7c16e8f994f4ab8ca59fa1b5a707

@@ -4,8 +4,7 @@
   Background:
 	Given I setup timeout for pages
     And I sign in
-	And Main page has expected title
-	When I click new event
+	And I click new event
 	
 Scenario: Add new event
 	And I fill event name with pizza
