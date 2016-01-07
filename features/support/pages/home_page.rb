@@ -10,6 +10,7 @@ class HomePage
   text_field(:friend_email, :xpath => '//*[@id="inviteFriends"]/ul/form/div/input') 
   button(:blue_button, :xpath => '//*[@id="inviteFriends"]/ul/form/div/span/button/i')
   div(:emailsent, :text => 'Friend invited')
+  link(:create_event, :xpath => '//*[@id="newEvent"]')
   
   def has_expected_title
     logout_element.when_visible(timeout = @@load_timeout)
@@ -54,9 +55,8 @@ class HomePage
 		error?
 	end
   
-   def click_
-    invite_friends_element.when_visible(timeout = @@load_timeout)
-    invite_friends
+  def click_new_event
+	create_event_element.when_visible(timeout = @@load_timeout)
+	create_event
   end
-  
 end

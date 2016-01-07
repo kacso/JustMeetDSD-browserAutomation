@@ -8,3 +8,6 @@ When /^I log out$/ do
 	on(HomePage).click_logout
 end
 
+When /^I click new event$/ do
+  on(HomePage).click_new_event
+end

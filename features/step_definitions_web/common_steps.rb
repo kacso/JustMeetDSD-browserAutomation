@@ -21,4 +21,4 @@ When /^I setup timeout for pages$/ do
 	on(MainPage).set_load_timeout @app['PAGE_TIMEOUT'].to_i
 	on(RecoverPasswordPage).set_load_timeout @app['PAGE_TIMEOUT'].to_i
 	on(CreateEventPage).set_load_timeout @app['PAGE_TIMEOUT'].to_i
-	end
+end
