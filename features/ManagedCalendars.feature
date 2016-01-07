@@ -25,3 +25,23 @@ Feature: Test calendars features
 	
  Scenario: Delete calendar
 	And I delete calendar
+	
+ Scenario: Import calendar
+	And I delete imported calendars in case of failure
+	And I click add calendar
+	And I click import calendar
+	And I enter IMPORT_CAL_NAME as calendar name
+	And I upload calendar CAL_FILE
+	And I click add
+	Then calendar is added
+    
+	
+ Scenario: Edit by URL
+	And I click edit calendar
+	And I enter IMPORT_CAL_NAME as calendar name
+	And I upload calendar CAL_FILE
+	And I click update
+	Then calendar is updated
+	
+ Scenario: Delete calendar
+	And I delete calendar

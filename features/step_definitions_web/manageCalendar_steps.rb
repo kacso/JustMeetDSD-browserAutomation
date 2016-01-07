@@ -49,3 +49,12 @@ end
 Then /^calendar is updated$/ do
 	expect(on(EditProfilePage).calendar_added).to eq true
 end
+
+When /^I click import calendar$/ do
+	on(EditProfilePage).click_import_calendar
+end
+
+When /^I upload calendar (.+)$/ do |file|
+	file =  @app[file] ? @app[file] : file
+	on(EditProfilePage).upload_calendar file
+end

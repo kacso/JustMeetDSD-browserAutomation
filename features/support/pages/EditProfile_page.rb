@@ -113,7 +113,9 @@ class EditProfilePage
   end
   
   def upload_calendar(path)
-	
+	path = File.expand_path(path, Dir.pwd)
+	#puts path
+	@browser.file_field(:xpath, '/html/body/div[7]/div/div/div/div[2]/div[2]/form/div[2]/div/input').set(path)
   end
   
   def click_add
@@ -158,5 +160,10 @@ class EditProfilePage
   def click_update
 	update_element.when_visible(timeout = @@load_timeout)
 	update
+  end
+  
+  def click_import_calendar
+	import_calendar_element.when_visible(timeout = @@load_timeout)
+	import_calendar
   end
  end
