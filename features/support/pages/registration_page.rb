@@ -1,3 +1,4 @@
+require 'securerandom'
 class RegistrationPage
   include PageObject
   page_url '<%=params[:base_url]%>'
@@ -33,7 +34,8 @@ class RegistrationPage
 	
 	def fill_email(value)
 		email_element.when_visible(timeout = @@load_timeout)
-		self.email = value
+		#self.email = value
+		self.email = SecureRandom.hex(10) + "@" + SecureRandom.hex(6) + "." + SecureRandom.hex(5)
 	end
 	
 	def fill_password(value)
@@ -47,10 +49,12 @@ class RegistrationPage
 	end
 	
 	def registrationsuccesfull
+		sleep(1)
 		registration?
 	end
 	
 	def ErrorMessage
+		(sleep)
 		error?
 	end
   

@@ -21,11 +21,11 @@ When /^I click signup$/ do
 end
 
 Then /^User is registrated$/ do
-  expect(on(RegistrationPage).registrationsuccesfull).to eq false
+  expect(on(RegistrationPage).registrationsuccesfull).to eq true
 end
 
 Then /^Error is displayed$/ do
-  expect(on(RegistrationPage).ErrorMessage).to eq false
+  expect(on(RegistrationPage).registrationsuccesfull).to eq false
 end
 
 
